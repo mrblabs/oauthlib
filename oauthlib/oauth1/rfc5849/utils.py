@@ -52,16 +52,16 @@ def escape(u):
     .. _`section 3.6`: http://tools.ietf.org/html/rfc5849#section-3.6
 
     """
-    if not isinstance(u, unicode_type):
-        raise ValueError('Only unicode objects are escapable.')
+#    if not isinstance(u, unicode_type):
+#        raise ValueError('Only unicode objects are escapable.')
     # Letters, digits, and the characters '_.-' are already treated as safe
     # by urllib.quote(). We need to add '~' to fully support rfc5849.
     return quote(u, safe=b'~')
 
 
 def unescape(u):
-    if not isinstance(u, unicode_type):
-        raise ValueError('Only unicode objects are unescapable.')
+#    if not isinstance(u, unicode_type):
+#        raise ValueError('Only unicode objects are unescapable.')
     return unquote(u)
 
 
